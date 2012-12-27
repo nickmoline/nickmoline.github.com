@@ -2,7 +2,7 @@
 <html lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# 
                   website: http://ogp.me/ns/website# article: http://ogp.me/ns/article#">
 <head>
-	<title>{{ page.title }}</title>
+	<title>{% if page.title %}{{ page.title }} | {% endif %} {{site.sitetitle}}</title>
 	<meta name="description" content="Nick Moline's Code World" />
 
 	<meta charset="utf-8" />
