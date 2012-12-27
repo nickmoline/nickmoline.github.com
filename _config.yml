@@ -1,3 +1,2 @@
 title: Nick.pro re:coded
 baseurl: http://code.nick.pro/
-currentyear: site.time | date: "%Y"

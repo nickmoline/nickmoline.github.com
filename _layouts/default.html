@@ -119,7 +119,7 @@
 		<footer>
 			<div class="row">
 				<div class="span6">
-					<div><a href="{{site.baseurl}}" class="hidden-phone">{{site.title}}</a> &copy; 2012{% if site.currentyear > 2012 %}-{{site.currentyear}}{% endif %} <a href="http://www.nick.pro/">Nicholas Moline</a></div>
+					<div><a href="{{site.baseurl}}" class="hidden-phone">{{site.title}}</a> &copy; 2012 &ndash; {{site.time | date: "%Y"}} <a href="http://www.nick.pro/">Nicholas Moline</a></div>
 					<div class="hidden-phone">Last Built {{site.time | date: "%Y-%m-%d %H:%M:%S"}}</div>
 				</div>
 				<div class="span6 hidden-phone" style="text-align:right;">
@@ -144,7 +144,6 @@
 	})();
 
 	</script>
-{{site.currentyear}}
 </body>
 </html>
 
