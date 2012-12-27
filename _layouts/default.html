@@ -2,7 +2,7 @@
 <html lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# 
                   website: http://ogp.me/ns/website# article: http://ogp.me/ns/article#">
 <head>
-	<title>{% if page.title %}{{ page.title }} | {% endif %} {{site.sitetitle}}</title>
+	<title>{% if page.title %}{{ page.title }} | {% endif %} {{site.title}}</title>
 	<meta name="description" content="Nick Moline's Code World" />
 
 	<meta charset="utf-8" />
@@ -49,16 +49,16 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="http://code.nick.pro/">NickMoline re:coded</a>
+				<a class="brand" href="{{site.baseurl}}">{{site.title}}</a>
 				<div class="nav-collapse collapse">
 					<ul class="nav">
 						<li><a href="http://www.nick.pro/"><i class="icon-home icon-white"></i> Nick.pro</a></li>
 						<li class="active dropdown">
-							<a href="http://code.nick.pro/" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-hdd icon-white"></i> Code <b class="caret"></b></a>
+							<a href="{{site.baseurl}}" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-hdd icon-white"></i> Code <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="http://code.nick.pro/"><i class="icon-hdd"></i> Code</a></li>
+								<li><a href="{{site.baseurl}}"><i class="icon-hdd"></i> Code</a></li>
 								<li class="divider"></li>
-								<li><a href="http://code.nick.pro/justia.html">Justia Projects</a></li>
+								<li><a href="{{site.baseurl}}justia.html">Justia Projects</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
@@ -92,7 +92,7 @@
 		<footer>
 			<div class="row">
 				<div class="span6">
-					&copy; 2012 <a href="http://www.nick.pro/">Nicholas Moline</a>
+					&copy; 2012 <a href="http://www.nick.pro/">Nicholas Moline</a> - Last Built {{site.time}}
 				</div>
 				<div class="span6" style="text-align:right;">
 					Powered by <a href="http://pages.github.com">Github Pages</a>, <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> and <a href="http://www.glyphicons.com/">Glyphicons</a>
