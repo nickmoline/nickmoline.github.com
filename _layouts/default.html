@@ -1,21 +1,40 @@
 <!DOCTYPE html>
-<html lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# 
-                  website: http://ogp.me/ns/website# article: http://ogp.me/ns/article#">
+<html lang="en" prefix="og: http://ogp.me/ns# 
+                        fb: http://ogp.me/ns/fb# 
+                        website: http://ogp.me/ns/website# 
+                        article: http://ogp.me/ns/article#">
 <head>
-	<title>{% if page.title %}{{ page.title }} | {% endif %} {{site.title}}</title>
-	<meta name="description" content="Nick Moline's Code World" />
+    <meta charset="utf-8" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:site_name" content="{{site.title}}" />
+    
+    <title>{% if page.title %}{{ page.title }} | {% endif %} {{site.title}}</title>
+    <meta property="og:title" content="{{page.title}}" />
+    <meta name="twitter:title" content="{{page.title}}" />
+    
+    <meta name="description" content="{% if page.description %}{{page.description}} | {% endif %}{{site.authorname}}'s Code World" />
+    <meta property="og:description" content="{% if page.description %}{{page.description}}{% else %}{{site.authorname}}'s Code World{% endif %}" />
+    <meta name="twitter:description" content="{% if page.description %}{{page.description}}{% else %}{{site.authorname}}'s Code World{% endif %}" />
 
-	<meta charset="utf-8" />
+    <meta property="og:url" content="{{site.baseurl}}{{page.url}}" />
+    <meta name="twitter:url" content="{% if page.shorturl %}{{page.shorturl}}{% else %}{{site.baseurl}}{{page.url}}{% endif %}" />
+    
+    <meta name="robots" content="index, follow" /> 
 
-	<meta name="twitter:card" content="summary" />
+	    
+	<meta property="fb:profile_id" content="{{site.facebookid}}" />
+    <meta property="fb:admins" content="{{site.facebookid}}" />
 
-	<meta property="og:site_name" content="NickMoline re:coded" />
+	<meta name="author" content="{{site.authorname}}" />
 	
-	<meta property="fb:profile_id" content="https://www.facebook.com/nickmoline" />
+    <!-- Nick's other profiles -->
+    <link rel="author" href="{{site.googleplus}}" />
+    <link rel="author" href="{{site.facebookurl}}" />
+    <link rel="author" href="https://twitter.com/{{site.twittername}}" />
+    <link rel="author" href="{{site.linkedin}}" />
+    <link rel="author" href="{{site.github}}" />
 
-	<meta name="author" content="Nicholas Moline" />
-	<link rel="author" href="https://plus.google.com/100038801356570551641/posts" />
-	<meta property="article:author" content="https://www.facebook.com/nickmoline" />
+    <meta property="article:author" content="{{site.facebookurl}}" />
 	{% if site.twittername %}
         <meta name="twitter:site" content="@{{site.twittername}}" />
     {% endif %}
@@ -66,15 +85,15 @@
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="http://www.nick.pro/contact" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-comment icon-white"></i> Contact Nick <b class="caret"></b></a>
+							<a href="http://www.nick.pro/contact" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-comment icon-white"></i> Contact {{site.authorshort}} <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="http://www.nick.pro/contact"><i class="icon-comment"></i> Contact Nick</a></li>
+								<li><a href="http://www.nick.pro/contact"><i class="icon-comment"></i> Contact {{site.authorshort}}</a></li>
 								<li class="divider"></li>
 								<li class="nav-header">Social Media</li>
-								<li><a href="https://twitter.com/nickmoline" title="Follow @nickmoline on Twitter"><img src="/glyphicons/png/glyphicons_411_twitter.png" alt="Follow @nickmoline on Twitter" width="16" height="16" /> Twitter</a></li>
-								<li><a href="https://www.facebook.com/nickmoline" title="Follow nickmoline on Facebook"><img src="/glyphicons/png/glyphicons_410_facebook.png" alt="Follow nickmoline on Facebook" width="16" height="16" /> Facebook</a></li>
-								<li><a href="https://plus.google.com/100038801356570551641/posts" title="Circle Nick Moline on Google+"><img src="/glyphicons/png/glyphicons_382_google_plus.png" alt="Circle Nick on Google+" width="16" height="16" /> Google+</a></li>
-								<li><a href="http://www.linkedin.com/in/nickmoline" title="Connect with Nicholas Moline on Linkedin"><img src="/glyphicons/png/glyphicons_397_linked_in.png" alt="Connect with Nicholas Moline on LinkedIn" width="16" height="16" /> LinkedIn</a></li>
+								<li><a href="https://twitter.com/{{site.twittername}}" title="Follow @{{site.twittername}} on Twitter"><img src="/glyphicons/png/glyphicons_411_twitter.png" alt="Follow @{{site.twittername}} on Twitter" width="16" height="16" /> Twitter</a></li>
+								<li><a href="{{site.facebookurl}}" title="Follow nickmoline on Facebook"><img src="/glyphicons/png/glyphicons_410_facebook.png" alt="Follow {{site.authorname}} on Facebook" width="16" height="16" /> Facebook</a></li>
+								<li><a href="{{site.googleplus}}" title="Circle {{site.authorname}} on Google+"><img src="/glyphicons/png/glyphicons_382_google_plus.png" alt="Circle {{site.authorname}} on Google+" width="16" height="16" /> Google+</a></li>
+								<li><a href="http://www.linkedin.com/in/nickmoline" title="Connect with {{site.authorname}} on Linkedin"><img src="/glyphicons/png/glyphicons_397_linked_in.png" alt="Connect with {{site.authorname}} on LinkedIn" width="16" height="16" /> LinkedIn</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
@@ -98,23 +117,23 @@
 			</div>
 			<div class="span4 hidden-phone">
 				<div class="well widget">
-					<h3>Nick on the Web</h3>
+					<h3>{{site.authorname}} on the Web</h3>
 
 					<div class="textwidget">
-						<a href="https://plus.google.com/100038801356570551641/posts" title="Nick on Google+" rel="author"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/google-plus.png" title="Nick on Google+" alt="Nick on Google+"></a>
-						<a href="https://twitter.com/nickmoline" title="Follow @NickMoline on Twitter" rel="author"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/twitter-2.png" title="Follow @NickMoline on Twitter" alt="Follow @NickMoline on Twitter"></a>
-						<a href="https://www.facebook.com/nickmoline" title="Nick Moline on Facebook" rel="author"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/facebook.png" title="Nick Moline on Facebook" alt="Nick Moline on Facebook"></a>
-						<a href="http://www.linkedin.com/in/nickmoline" title="Nick Moline on LinkedIn" rel="author"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/linkedin.png" title="Nick Moline on LinkedIn" alt="Nick Moline on LinkedIn"></a>
-						<a href="http://pinterest.com/nickmoline/" title="Nick Moline on Pinterest" rel="author"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/pinterest.png" title="Nick Moline on Pinterest" alt="Nick Moline on Pinterest"></a>
-						<a href="http://www.myspace.com/nickmoline" title="Nick Moline on Myspace" rel="author"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/myspace.png" title="Nick Moline on Myspace" alt="Nick Moline on Myspace"></a>
-						<a href="https://foursquare.com/nickmoline" title="Nick Moline on Foursquare" rel="author"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/foursquare.png" title="Nick Moline on Foursquare" alt="Nick Moline on Foursquare"></a>
-						<a href="http://about.me/nickmoline" title="About Nick Moline" rel="author"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/aboutme.png" title="Nick Moline on about.me" alt="Nick Moline on abuot.me"></a>
+						<a href="{{site.googleplus}}" title="Nick on Google+" rel="author"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/google-plus.png" title="{{site.authorname}} on Google+" alt="{{site.authorname}} on Google+"></a>
+						<a href="https://twitter.com/{{site.twittername}}" title="Follow @{{site.twittername}} on Twitter" rel="author"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/twitter-2.png" title="Follow @{{site.twittername}} on Twitter" alt="Follow @{{site.twittername}} on Twitter"></a>
+						<a href="{{site.facebookurl}}" title="{{site.authorname}} on Facebook" rel="author"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/facebook.png" title="{{site.authorname}} on Facebook" alt="{{site.authorname}} on Facebook"></a>
+						<a href="{{site.linkedin}}" title="{{site.authorname}} on LinkedIn" rel="author"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/linkedin.png" title="{{site.authorname}} on LinkedIn" alt="{{site.authorname}} on LinkedIn"></a>
+						<a href="http://pinterest.com/nickmoline/" title="{{site.authorname}} on Pinterest" rel="author"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/pinterest.png" title="{{site.authorname}} on Pinterest" alt="{{site.authorname}} on Pinterest"></a>
+						<a href="http://www.myspace.com/nickmoline" title="{{site.authorname}} on Myspace" rel="author"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/myspace.png" title="{{site.authorname}} on Myspace" alt="{{site.authorname}} on Myspace"></a>
+						<a href="https://foursquare.com/nickmoline" title="{{site.authorname}} on Foursquare" rel="author"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/foursquare.png" title="{{site.authorname}} on Foursquare" alt="{{site.authorname}} on Foursquare"></a>
+						<a href="http://about.me/nickmoline" title="About {{site.authorname}}" rel="author"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/aboutme.png" title="{{site.authorname}} on about.me" alt="{{site.authorname}} on abuot.me"></a>
 						<a href="http://www.meetup.com/members/15833761/" title="Meet Nick" rel="author"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/meetup.png" title="Meet Nick" alt="Meet Nick"></a>
 						<a href="https://picasaweb.google.com/100038801356570551641" title="Nick's Photos on Picasa" rel="author"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/picasa.png" title="Nick's Photos on Picasa" alt="Nick's Photos on Picasa"></a>
-						<a href="http://www.youtube.com/user/nickmoline" title="Nick Moline on YouTube"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/youtube.png" title="Nick Moline on Youtube" alt="Nick Moline on YouTube"></a>
-						<a href="https://vimeo.com/nickmoline" title="Nick Moline on vimeo"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/vimeo.png" title="Nick Moline on vimeo" alt="Nick Moline on vimeo"></a>
-						<a href="http://www.slideshare.net/nickmoline" title="Nick Moline's Presenations on SlideShare"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/slideshare.png" title="Nick Moline's Presenations on SlideShare" alt="Nick Moline's Presenations on SlideShare"></a>
-						<a href="https://github.com/nickmoline" title="Nick Moline on github" rel="author"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/github.png" title="Nick Moline on github" alt="Nick Moline on github"></a>
+						<a href="http://www.youtube.com/user/nickmoline" title="{{site.authorname}} on YouTube"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/youtube.png" title="{{site.authorname}} on Youtube" alt="{{site.authorname}} on YouTube"></a>
+						<a href="https://vimeo.com/nickmoline" title="{{site.authorname}} on vimeo"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/vimeo.png" title="{{site.authorname}} on vimeo" alt="{{site.authorname}} on vimeo"></a>
+						<a href="http://www.slideshare.net/nickmoline" title="{{site.authorname}}'s Presenations on SlideShare"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/slideshare.png" title="{{site.authorname}}'s Presenations on SlideShare" alt="{{site.authorname}}'s Presenations on SlideShare"></a>
+						<a href="{{site.github}}" title="{{site.authorname}} on github" rel="author"><img src="//s3.amazonaws.com/icons.nick.pro/vsmi/32px/github.png" title="{{site.authorname}} on github" alt="{{site.authorname}} on github"></a>
 					</div>
 				</div>
 			</div>
@@ -122,7 +141,7 @@
 		<footer>
 			<div class="row">
 				<div class="span6">
-					<div><a href="{{site.baseurl}}" class="hidden-phone">{{site.title}}</a> &copy; 2012 &ndash; {{site.time | date: "%Y"}} <a href="http://www.nick.pro/">Nicholas Moline</a></div>
+					<div><a href="{{site.baseurl}}" class="hidden-phone">{{site.title}}</a> &copy; 2012 &ndash; {{site.time | date: "%Y"}} <a href="http://www.nick.pro/">{{site.authorname}}</a></div>
 					<div class="hidden-phone">Last Built {{site.time | date: "%Y-%m-%d %H:%M:%S"}}</div>
 				</div>
 				<div class="span6 hidden-phone" style="text-align:right;">
