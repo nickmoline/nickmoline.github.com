@@ -16,9 +16,12 @@
 	<meta name="author" content="Nicholas Moline" />
 	<link rel="author" href="https://plus.google.com/100038801356570551641/posts" />
 	<meta property="article:author" content="https://www.facebook.com/nickmoline" />
-	<meta name="twitter:site" content="@nickmoline" />
-	<meta name="twitter:creator" content="@nickmoline" />
-	
+	{% if site.twittername %}
+        <meta name="twitter:site" content="@{{site.twittername}}" />
+    {% endif %}
+    {% if site.twittername || page.twittername %}
+    	<meta name="twitter:creator" content="@{% if page.twittername %}{{page.twittername}}{% else %}{{site.twittername}}{% endif %}" />
+	{% endif %}
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link type="text/css" href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 	<style type="text/css">
